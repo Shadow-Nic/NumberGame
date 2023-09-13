@@ -39,11 +39,16 @@ while (start) {
         scoreBoard = 0;
     }
 
-    const playAgain = readline.question("Do you want to continue? (y/n): ");
-    console.clear();
-    if (playAgain === "") {
-        console.log("Please enter y/n");
-    } else if (playAgain.toLowerCase() === "y") {
+    let playAgain;
+    do {
+        playAgain = readline.question("Do you want to continue? (y/n): ");
+        console.clear();
+    } while (
+        playAgain.toLowerCase() !== "y" &&
+        playAgain.toLowerCase() !== "n"
+    );
+
+    if (playAgain.toLowerCase() === "y") {
         if (currentLevel < levels.length - 1) {
             currentLevel++;
             console.clear();
@@ -71,7 +76,11 @@ while (start) {
 
 function startGame() {
     intro();
-    const userInput = readline.question("Type 'Start' to begin: ");
+    let userInput = "";
+
+    do {
+        userInput = readline.question("Type 'Start' to begin: ");
+    } while (userInput.toLowerCase() !== "start");
 
     if (userInput.toLowerCase() === "start") {
         console.clear();

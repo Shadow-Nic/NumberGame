@@ -27,3 +27,10 @@ Contributions are welcome! Fork the repository, make your changes, and create a 
 
 
 
+## Bug Fixes
+
+- fixed empty input bug
+
+
+
+
