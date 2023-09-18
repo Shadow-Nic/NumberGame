@@ -24,8 +24,10 @@
   },
   "contributors": [],
   "scripts": {
+    "start": "node game.js",
     "dev": "",
     "test": ""
+    
   },
   "dependencies": {
     "readline-sync": "^1.4.10"
